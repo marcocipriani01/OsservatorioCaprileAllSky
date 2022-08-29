@@ -91,7 +91,7 @@ if [ "${CAMERA}" = "RPiHQ" ]; then
 		# the output of vcgencmd changes depending on the OS and how the Pi is configured.
 		# Newer kernels/libcamera give:   supported=1 detected=0, libcamera interfaces=1
 		# but only if    start_x=1    is in /boot/config.txt
-		vcgencmd get_camera | grep --silent "supported=1" ######### detected=1"
+		vcgencmd get_camera | grep --silent "supported=2" ######### detected=1"
 		RET=$?
 	fi
 	if [ ${RET} -ne 0 ]; then
