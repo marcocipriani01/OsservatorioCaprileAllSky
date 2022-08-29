@@ -123,9 +123,9 @@ printf("XXXXXX == in IntHandle(), got signal %d\n", i);
 const char *getCameraCommand(bool libcamera)
 {
 	if (libcamera)
-		return("libcamera-still");
+		return("libcamera-still --camera 1");
 	else
-		return("raspistill");
+		return("raspistill -cs 1");
 }
 
 // Build capture command to capture the image from the HQ camera

@@ -78,7 +78,7 @@ if [ "${CAMERA}" = "RPiHQ" ]; then
 	which libcamera-still > /dev/null
 	RET=$?
 	if [ ${RET} -eq 0 ]; then
-		LIBCAMERA_LOG_LEVELS="ERROR,FATAL" libcamera-still --timeout 1 --nopreview > /dev/null 2>&1
+		LIBCAMERA_LOG_LEVELS="ERROR,FATAL" libcamera-still --camera 1 --timeout 1 --nopreview > /dev/null 2>&1
 		RET=$?
 	fi
 	if [ ${RET} -eq 0 ]; then

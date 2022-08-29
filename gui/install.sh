@@ -63,9 +63,6 @@ do_sudoers()
 	sed -e "s;XX_ALLSKY_SCRIPTS_XX;${ALLSKY_SCRIPTS};" ${SCRIPTPATH}/sudoers > /etc/sudoers.d/allsky
 }
 
-NEED_TO_UPDATE_HOST_NAME="true"
-CURRENT_HOSTNAME=$(tr -d " \t\n\r" < /etc/hostname)
-
 # Check if the user is updating an existing installation.
 if [ "${1}" = "--update" ] || [ "${1}" = "-update" ] ; then
 	shift
@@ -102,13 +99,6 @@ if [ "${1}" = "--update" ] || [ "${1}" = "-update" ] ; then
 	fi
 
 	exit 0		# currently nothing else to do for updates
-
-else
-	HOST_NAME='allsky'
-	HOST_NAME=$(whiptail --inputbox "Please enter a hostname for your Allsky Pi" 20 60 "${HOST_NAME}" 3>&1 1>&2 2>&3)
-	if [ "${CURRENT_HOSTNAME}" = "${HOST_NAME}" ]; then
-		NEED_TO_UPDATE_HOST_NAME="false"
-	fi
 fi
 # FOR TESTING:   echo -e "${GREEN} * Using host name '${HOST_NAME}'${NC}";  exit
 
@@ -127,15 +117,6 @@ sed -i \
 	  "${SCRIPTPATH}/lighttpd.conf"
 install -m 0644 "${SCRIPTPATH}/lighttpd.conf" /etc/lighttpd/lighttpd.conf
 echo
-
-if [ "${NEED_TO_UPDATE_HOST_NAME}" = "true" ]; then
-	echo -e "${GREEN}* Changing hostname to '${HOST_NAME}'${NC}"
-	echo "${HOST_NAME}" > /etc/hostname
-	sed -i "s/127.0.1.1.*${CURRENT_HOSTNAME}/127.0.1.1\t${HOST_NAME}/g" /etc/hosts
-	echo
-else
-	echo -e "${GREEN}* Leaving hostname at '${HOST_NAME}'${NC}"
-fi
 
 FILE="/etc/avahi/avahi-daemon.conf"
 [ -f "${FILE}" ] && grep -i --quiet "host-name=${HOST_NAME}" "${FILE}"

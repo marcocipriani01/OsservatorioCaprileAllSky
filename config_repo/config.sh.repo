@@ -7,7 +7,7 @@
 #  - If a variable occurs multiple times, only the last value is used.
 
 # Choose between "ZWO" or "RPiHQ".
-CAMERA=""
+CAMERA="RPiHQ"
 
 
 ########## Images
@@ -26,7 +26,7 @@ IMG_UPLOAD_FREQUENCY=1
 #     imageName: "/current/tmp/image.jpg",
 # This avoids copying the image to the website.
 # Only change IMG_DIR if you know what you are doing.
-IMG_DIR="current/tmp"
+IMG_DIR="current"
 
 # Resize images before cropping, stretching, and saving.
 # Adjust IMG_WIDTH and IMG_HEIGHT according to your camera's sensor ratio.
@@ -91,7 +91,7 @@ TIMELAPSEHEIGHT=0
 TIMELAPSE_BITRATE="2000k"
 
 # Timelapse video Frames Per Second.
-FPS=25
+FPS=30
 
 # Encoder for timelapse video. May be changed to use a hardware encoder or different codec.
 VCODEC="libx264"
@@ -116,7 +116,7 @@ UPLOAD_VIDEO="false"
 
 ########## Keogram
 # Set to "true" to generate a keogram at the end of each night.
-KEOGRAM="true"
+KEOGRAM="false"
 
 # Additional Keogram parameters.  Run "keogram --help" to see the options.
 KEOGRAM_EXTRA_PARAMETERS="--font-size 1.0 --font-line 1 --font-color '255 255 255'"
@@ -127,7 +127,7 @@ UPLOAD_KEOGRAM="false"
 
 ########## Startrails
 # Set to "true" to generate a startrails image of each night.
-STARTRAILS="true"
+STARTRAILS="false"
 
 # Images with a brightness higher than this threshold will be skipped for
 # startrails image generation.  Values are 0.0 to 1.0.
@@ -147,11 +147,11 @@ THUMBNAIL_SIZE_Y=75
 
 # Set this value to the number of days images plus videos you want to keep.
 # Set to "" to keep ALL days.
-DAYS_TO_KEEP=14
+DAYS_TO_KEEP=5
 
 # Same as DAYS_TO_KEEP, but for the Allsky website, if installed.
 # Set to "" to keep ALL days.
-WEB_DAYS_TO_KEEP=""
+WEB_DAYS_TO_KEEP=5
 
 # Set to "true" to upload data to your server at the end of each night.
 # This is needed if you are running the Allsky Website.
