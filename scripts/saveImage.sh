@@ -79,8 +79,8 @@ if [ "${DAY_OR_NIGHT}" = "NIGHT" ] ; then
 fi
 
 # If any of the "convert"s below fail, exit since we won't know if the file was corrupted.
-cp $FULL_FILENAME /home/caprile/IrisAstroServer/data/
-convert $FULL_FILENAME -resize 640x480 "/home/caprile/IrisAstroServer/data/allsky_small.jpg"
+cp $CURRENT_IMAGE /home/caprile/IrisAstroServer/data/
+convert $CURRENT_IMAGE -resize 640x480 "/home/caprile/IrisAstroServer/data/allsky_small.jpg"
 
 # Resize the image if required
 if [ "${IMG_RESIZE}" = "true" ] ; then
