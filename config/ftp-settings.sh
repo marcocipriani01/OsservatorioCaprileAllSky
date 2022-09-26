@@ -15,7 +15,7 @@
 	#		See the section for scp PROTOCOL below.   NOTE: "scp" PROTOCOL IS NOT IMPLEMENTED YET.
 	#  "S3"		uploads to an Amazon Web Services (AWS) server.
 	#		See the "S3 PROTOCOL only" section below.
-PROTOCOL=""
+PROTOCOL="local"
 
 
 # X*X*X*X*X*X*X*X*X*X*X*X          IMPORTANT NOTE          X*X*X*X*X*X*X*X*X*X*X*X*X*X
@@ -43,25 +43,25 @@ PROTOCOL=""
 # which will usually be in /var/www/html/allsky/videos.
 
 	# The remote directory where the current "image.jpg" file be copied to.
-IMAGE_DIR=""
+IMAGE_DIR='/var/www/html/allsky/'
 WEB_IMAGE_DIR=""
 
 	# The remote directory where the timelapse video should be uploaded to.
 	# Some people prefer to put timelapse, keogram, and startrails in separate directories.
 	# If you have the "allsky-website" package installed, use VIDEOS_DIR="/var/www/html/allsky/videos".
-VIDEOS_DIR=""
+VIDEOS_DIR='/var/www/html/allsky/videos'
 VIDEOS_DESTINATION_NAME=""
 WEB_VIDEOS_DIR=""
 
 	# The remote directory where the keogram image should be copied to.
 	# If you have the "allsky-website" package installed, use KEOGRAM_DIR="/var/www/html/allsky/keograms".
-KEOGRAM_DIR=""
+KEOGRAM_DIR='/var/www/html/allsky/keograms'
 KEOGRAM_DESTINATION_NAME=""
 WEB_KEOGRAM_DIR=""
 
 	# The remote directory where the startrails image should be copied to.
 	# If you have the "allsky-website" package installed, use STARTRAILS_DIR="/var/www/html/allsky/startrails".
-STARTRAILS_DIR=""
+STARTRAILS_DIR='/var/www/html/allsky/startrails'
 STARTRAILS_DESTINATION_NAME=""
 WEB_STARTRAILS_DIR=""
 
