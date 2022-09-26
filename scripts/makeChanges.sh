@@ -51,7 +51,7 @@ function update_config_js()
 		fi
 		if [ ${RET} -eq 0 ]; then
 			echo "'${FIELD}' updated in config.js to <b>${NEW}</b>."
-			sudo chown pi "${FILE}"
+			sudo chown caprile "${FILE}"
 		else
 			echo "<span style='color: red'>WARNING: '${FIELD}' in config.js could not be updated; ignoring</span>: ${OUTPUT}"
 		fi
