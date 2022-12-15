@@ -107,7 +107,7 @@ while [ $# -gt 0 ]; do
 done
 
 if [ "${RUN_POSTDATA}" = "true" ] && [ ${POST_END_OF_NIGHT_DATA} = "true" ]; then
-	RESULT="$(sudo --user pi --group pi "${ALLSKY_SCRIPTS}/postData.sh")"
+	RESULT="$(sudo --user caprile --group caprile "${ALLSKY_SCRIPTS}/postData.sh")"
 	# shellcheck disable=SC2181
 	if [ $? -eq 0 ]; then
 		echo "Twilight data posted."
